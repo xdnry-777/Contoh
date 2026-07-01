@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xdnry777 - Top Up Game & Saldo Termurah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ungu: {
+                            gelap: '#2D0C5E',
+                            utama: '#6B21A8',
+                            terang: '#A855F7',
+                            neon: '#D946EF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .bg-gradasi {
+                background: linear-gradient(135deg, #050505 0%, #1A102E 40%, #4C1D95 100%);
+            }
+            .bg-ungu-card {
+                background: linear-gradient(145deg, rgba(107, 33, 168, 0.2), rgba(45, 12, 94, 0.3));
+            }
+            .text-shadow {
+                text-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
+            }
+            .glow {
+                box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+            }
+            .glow-hover:hover {
+                box-shadow: 0 0 20px rgba(217, 70, 239, 0.6);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradasi min-h-screen font-sans text-white">
+    <!-- Navbar -->
+    <nav class="backdrop-blur-md bg-black/30 sticky top-0 z-50 border-b border-ungu-utama/30">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-ungu-terang text-shadow">
+                <i class="fa fa-bolt mr-1"></i>Xdnry777
+            </div>
+            <div class="hidden md:flex space-x-6 text-gray-200">
+                <a href="index.html" class="text-ungu-terang font-medium">Beranda</a>
+                <a href="pilih-game.html" class="hover:text-ungu-terang transition">Daftar Game</a>
+                <a href="#" class="hover:text-ungu-terang transition">Cara Beli</a>
+                <a href="#" class="hover:text-ungu-terang transition">Bantuan</a>
+            </div>
+            <button class="bg-ungu-utama hover:bg-ungu-terang px-4 py-2 rounded-lg transition glow-hover">
+                <i class="fa fa-user mr-1"></i>Masuk
+            </button>
+            <button class="md:hidden text-xl"><i class="fa fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Halaman Selamat Datang -->
+    <section class="container mx-auto px-4 py-16 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-[clamp(2.8rem,6vw,4.5rem)] font-bold mb-6 leading-tight">
+                Selamat Datang Di <br>
+                <span class="text-ungu-terang text-shadow">Xdnry777</span>
+            </h1>
+            <p class="text-gray-300 text-[clamp(1.1rem,2.5vw,1.3rem)] mb-4">
+                Tempat terbaik untuk top up game dan kebutuhan digital kamu!
+            </p>
+            <p class="text-gray-400 text-lg mb-10">
+                Harga termurah, proses super cepat, dan dijamin aman hanya untuk kamu.
+            </p>
+
+            <a href="pilih-game.html" class="inline-block bg-gradient-to-r from-ungu-utama to-ungu-neon hover:from-ungu-terang hover:to-ungu-neon px-10 py-4 rounded-xl font-bold text-lg transition-all glow-hover transform hover:-translate-y-1">
+                Mulai Top Up <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Keunggulan -->
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl font-bold mb-8 text-center">Kenapa Memilih Xdnry777?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-black/30 p-6 rounded-xl border border-ungu-utama/30 hover:border-ungu-terang transition-all">
+                <i class="fa fa-bolt text-ungu-terang text-3xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Proses Instan</h3>
+                <p class="text-gray-400">Saldo masuk dalam hitungan detik setelah pembayaran terkonfirmasi.</p>
+            </div>
+            <div class="bg-black/30 p-6 rounded-xl border border-ungu-utama/30 hover:border-ungu-terang transition-all">
+                <i class="fa fa-shield text-ungu-terang text-3xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">100% Aman</h3>
+                <p class="text-gray-400">Sistem keamanan terjamin & data pelanggan terjaga kerahasiaannya.</p>
+            </div>
+            <div class="bg-black/30 p-6 rounded-xl border border-ungu-utama/30 hover:border-ungu-terang transition-all">
+                <i class="fa fa-tag text-ungu-terang text-3xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Harga Termurah</h3>
+                <p class="text-gray-400">Dapatkan harga terbaik & promo khusus setiap hari hanya di Xdnry777.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/40 border-t border-ungu-utama/30 py-8 mt-10">
+        <div class="container mx-auto px-4">
+            <div class="text-center text-gray-400">
+                <div class="text-xl font-bold text-ungu-terang mb-4">Xdnry777</div>
+                <p>© 2026 Xdnry777. Semua Hak Dilindungi Undang-Undang</p>
+                <div class="mt-4 space-x-4 text-xl">
+                    <a href="#" class="hover:text-ungu-terang"><i class="fa fa-whatsapp"></i></a>
+                    <a href="#" class="hover:text-ungu-terang"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="hover:text-ungu-terang"><i class="fa fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struk Pembayaran - Xdnry777</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ungu: {
+                            gelap: '#2D0C5E',
+                            utama: '#6B21A8',
+                            terang: '#A855F7',
+                            neon: '#D946EF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .bg-gradasi {
+                background: linear-gradient(135deg, #050505 0%, #1A102E 40%, #4C1D95 100%);
+            }
+            .bg-ungu-card {
+                background: linear-gradient(145deg, rgba(107, 33, 168, 0.2), rgba(45, 12, 94, 0.3));
+            }
+            .text-shadow {
+                text-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
+            }
+            .struk-border {
+                border-image: linear-gradient(to right, #6B21A8, #A855F7, #6B21A8) 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradasi min-h-screen font-sans text-white flex items-center justify-center py-10 px-4">
+
+    <div class="w-full max-w-md">
+        <!-- Kotak Struk -->
+        <div class="bg-white/95 text-gray-800 rounded-xl shadow-2xl p-6 border-t-8 struk-border border-ungu-utama">
+            
+            <!-- Header Struk -->
+            <div class="text-center mb-6 pb-4 border-b border-dashed border-gray-300">
+                <h2 class="text-2xl font-bold text-ungu-utama">⚡ Xdnry777</h2>
+                <p class="text-sm text-gray-500">Layanan Top Up Terpercaya</p>
+                <div class="mt-2 text-xs text-gray-400">
+                    Dicetak: 01 Juli 2026, 17.33 WIB
+                </div>
+            </div>
+
+            <!-- Status Berhasil -->
+            <div class="bg-green-50 border border-green-200 rounded-lg p-3 text-center mb-4">
+                <i class="fa fa-check-circle text-green-500 text-xl"></i>
+                <p class="font-semibold text-green-700">PEMBAYARAN BERHASIL</p>
+            </div>
+
+            <!-- Data Pesanan -->
+            <div class="space-y-2 text-sm mb-4 pb-4 border-b border-dashed border-gray-300">
+                <div class="flex justify-between">
+                    <span class="text-gray-500">No. Pesanan</span>
+                    <span class="font-medium">XDN-8294-001</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">Layanan</span>
+                    <span>Mobile Legends</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">ID / Server</span>
+                    <span>12345678 (1234)</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">Item</span>
+                    <span>70 Diamonds</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">Metode Bayar</span>
+                    <span>DANA / QRIS</span>
+                </div>
+            </div>
+
+            <!-- Total Pembayaran -->
+            <div class="space-y-1 text-sm mb-6">
+                <div class="flex justify-between">
+                    <span class="text-gray-500">Harga</span>
+                    <span>Rp 20.000</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">Kode Unik</span>
+                    <span>Rp 50</span>
+                </div>
+                <div class="flex justify-between text-lg font-bold text-ungu-utama pt-2 border-t border-gray-200">
+                    <span>TOTAL</span>
+                    <span>Rp 20.050</span>
+                </div>
+            </div>
+
+            <!-- Footer Struk -->
+            <div class="text-center text-xs text-gray-500 border-t border-dashed border-gray-300 pt-4">
+                <p>Terima kasih telah berbelanja!</p>
+                <p class="mt-1">Saldo akan masuk dalam waktu 1-5 menit</p>
+                <p class="mt-2 font-semibold text-ungu-utama">~ Xdnry777 Store ~</p>
+            </div>
+        </div>
+
+        <!-- Tombol Aksi -->
+        <div class="mt-6 space-y-3">
+            <a href="https://wa.me/6285169935089?text=📋%20STRUK%20PEMBAYARAN%20XDNRY777%0A%0A📌%20No.%20Pesanan%3A%20XDN-8294-001%0A🎮%20Game%3A%20Mobile%20Legends%0A👤%20ID%2FServer%3A%2012345678%20(1234)%0A💎%20Item%3A%2070%20Diamonds%0A💳%20Metode%20Bayar%3A%20DANA%2FQ RIS%0A💰%20Total%20Bayar%3A%20Rp%2020.050%0A✅%20Status%3A%20Sudah%20Dibayar%0A%0ASilakan%20diproses%20ya%20min.%20Terima%20kasih%20🙏" 
+               target="_blank"
+               class="block w-full bg-green-600 hover:bg-green-700 py-3 rounded-lg font-semibold text-center transition-all">
+                <i class="fa fa-whatsapp mr-2"></i> Kirim Struk ke Admin
+            </a>
+
+            <a href="index.html" class="block w-full bg-ungu-utama hover:bg-ungu-terang py-3 rounded-lg font-semibold text-center transition-all">
+                <i class="fa fa-home mr-2"></i> Kembali ke Beranda
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

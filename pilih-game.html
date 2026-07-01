@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilih Game - Xdnry777</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ungu: {
+                            gelap: '#2D0C5E',
+                            utama: '#6B21A8',
+                            terang: '#A855F7',
+                            neon: '#D946EF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .bg-gradasi {
+                background: linear-gradient(135deg, #050505 0%, #1A102E 40%, #4C1D95 100%);
+            }
+            .bg-ungu-card {
+                background: linear-gradient(145deg, rgba(107, 33, 168, 0.2), rgba(45, 12, 94, 0.3));
+            }
+            .text-shadow {
+                text-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
+            }
+            .glow {
+                box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+            }
+            .glow-hover:hover {
+                box-shadow: 0 0 20px rgba(217, 70, 239, 0.6);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradasi min-h-screen font-sans text-white">
+    <!-- Navbar -->
+    <nav class="backdrop-blur-md bg-black/30 sticky top-0 z-50 border-b border-ungu-utama/30">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-ungu-terang text-shadow">
+                <i class="fa fa-bolt mr-1"></i>Xdnry777
+            </div>
+            <div class="hidden md:flex space-x-6 text-gray-200">
+                <a href="index.html" class="hover:text-ungu-terang transition">Beranda</a>
+                <a href="pilih-game.html" class="text-ungu-terang font-medium">Daftar Game</a>
+                <a href="#" class="hover:text-ungu-terang transition">Cara Beli</a>
+                <a href="#" class="hover:text-ungu-terang transition">Bantuan</a>
+            </div>
+            <button class="bg-ungu-utama hover:bg-ungu-terang px-4 py-2 rounded-lg transition glow-hover">
+                <i class="fa fa-user mr-1"></i>Masuk
+            </button>
+            <button class="md:hidden text-xl"><i class="fa fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <section class="container mx-auto px-4 py-12">
+        <a href="index.html" class="inline-flex items-center text-ungu-terang mb-6 hover:text-ungu-neon">
+            <i class="fa fa-arrow-left mr-2"></i> Kembali ke Beranda
+        </a>
+
+        <h1 class="text-2xl font-bold mb-8 text-center">Pilih Game Kamu</h1>
+
+        <!-- Kotak Pilih Layanan & Isi Data -->
+        <div class="max-w-3xl mx-auto bg-ungu-card backdrop-blur-sm rounded-2xl p-6 border border-ungu-utama/40 glow mb-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                <div class="text-left">
+                    <label class="text-gray-400 text-sm mb-1 block">Pilih Layanan</label>
+                    <select class="w-full bg-black/40 border border-ungu-utama/50 rounded-lg px-3 py-3 focus:outline-none focus:ring-2 focus:ring-ungu-terang">
+                        <option>Mobile Legends</option>
+                        <option>Free Fire</option>
+                        <option>PUBG Mobile</option>
+                        <option>Valorant</option>
+                        <option>Higgs Domino</option>
+                        <option>Pulsa & Data</option>
+                    </select>
+                </div>
+                <div class="text-left">
+                    <label class="text-gray-400 text-sm mb-1 block">ID Pengguna</label>
+                    <input type="text" placeholder="Masukkan ID" class="w-full bg-black/40 border border-ungu-utama/50 rounded-lg px-3 py-3 focus:outline-none focus:ring-2 focus:ring-ungu-terang">
+                </div>
+                <div class="text-left">
+                    <label class="text-gray-400 text-sm mb-1 block">Server (Jika Ada)</label>
+                    <input type="text" placeholder="Contoh: 1234" class="w-full bg-black/40 border border-ungu-utama/50 rounded-lg px-3 py-3 focus:outline-none focus:ring-2 focus:ring-ungu-terang">
+                </div>
+            </div>
+            <button class="w-full bg-gradient-to-r from-ungu-utama to-ungu-neon hover:from-ungu-terang hover:to-ungu-neon py-3 rounded-lg font-semibold transition-all glow-hover">
+                Lanjutkan Pemesanan <i class="fa fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+
+        <!-- Daftar Game Cepat -->
+        <h2 class="text-xl font-semibold mb-4 text-center">Atau Pilih Langsung</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+            <div class="bg-ungu-card p-4 rounded-xl text-center border border-ungu-utama/30 hover:border-ungu-terang transition-all cursor-pointer hover:-translate-y-1">
+                <div class="text-4xl mb-2">🎮</div>
+                <p class="text-sm">Mobile Legends</p>
+            </div>
+            <div class="bg-ungu-card p-4 rounded-xl text-center border border-ungu-utama/30 hover:border-ungu-terang transition-all cursor-pointer hover:-translate-y-1">
+                <div class="text-4xl mb-2">🔥</div>
+                <p class="text-sm">Free Fire</p>
+            </div>
+            <div class="bg-ungu-card p-4 rounded-xl text-center border border-ungu-utama/30 hover:border-ungu-terang transition-all cursor-pointer hover:-translate-y-1">
+                <div class="text-4xl mb-2">🔫</div>
+                <p class="text-sm">PUBG Mobile</p>
+            </div>
+            <div class="bg-ungu-card p-4 rounded-xl text-center border border-ungu-utama/30 hover:border-ungu-terang transition-all cursor-pointer hover:-translate-y-1">
+                <div class="text-4xl mb-2">⚔️</div>
+                <p class="text-sm">Valorant</p>
+            </div>
+            <div class="bg-ungu-card p-4 rounded-xl text-center border border-ungu-utama/30 hover:border-ungu-terang transition-all cursor-pointer hover:-translate-y-1">
+                <div class="text-4xl mb-2">💎</div>
+                <p class="text-sm">Higgs Domino</p>
+            </div>
+            <div class="bg-ungu-card p-4 rounded-xl text-center border border-ungu-utama/30 hover:border-ungu-terang transition-all cursor-pointer hover:-translate-y-1">
+                <div class="text-4xl mb-2">📱</div>
+                <p class="text-sm">Pulsa & Data</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/40 border-t border-ungu-utama/30 py-8 mt-10">
+        <div class="container mx-auto px-4">
+            <div class="text-center text-gray-400">
+                <div class="text-xl font-bold text-ungu-terang mb-4">Xdnry777</div>
+                <p>© 2026 Xdnry777. Semua Hak Dilindungi Undang-Undang</p>
+                <div class="mt-4 space-x-4 text-xl">
+                    <a href="#" class="hover:text-ungu-terang"><i class="fa fa-whatsapp"></i></a>
+                    <a href="#" class="hover:text-ungu-terang"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="hover:text-ungu-terang"><i class="fa fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
