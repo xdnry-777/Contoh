@@ -13,12 +13,16 @@ function cekAkses() {
     }
 }
 
-// Fungsi Menu Samping
+// Fungsi Menu Samping - SUDAH DIPERBAIKI
 function bukaMenu() {
     document.getElementById('menuSamping').classList.remove('-translate-x-full');
+    document.getElementById('lapisanTutup').classList.remove('hidden');
+    document.body.style.overflow = 'hidden'; // Kunci layar saat menu terbuka
 }
 function tutupMenu() {
     document.getElementById('menuSamping').classList.add('-translate-x-full');
+    document.getElementById('lapisanTutup').classList.add('hidden');
+    document.body.style.overflow = ''; // Buka kembali layar
 }
 
 // Login Berhasil
