@@ -7,77 +7,44 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ungu: { utama: '#6B21A8' }
-                    }
-                }
-            }
-        }
+        tailwind.config = { theme: { extend: { colors: { ungu: { utama:'#6B21A8' } } } } }
     </script>
-    <style>
-        body { background: linear-gradient(135deg, #050505 0%, #1A102E 40%, #4C1D95 100%); min-height: 100vh; font-family: sans-serif; }
-    </style>
+    <style>.bg-gradasi { background: linear-gradient(135deg, #050505 0%, #1A102E 40%, #4C1D95 100%); }</style>
 </head>
-<body class="flex items-center justify-center p-4">
-    <div class="w-full max-w-md bg-white/95 rounded-xl p-6 shadow-2xl text-gray-800">
-        <!-- Header -->
-        <div class="text-center mb-4">
-            <div class="text-2xl font-bold text-ungu-utama">⚡ Xdnry777</div>
-            <p class="text-sm text-gray-500 mt-1" id="waktuSekarang"></p>
+<body class="bg-gradasi min-h-screen font-sans flex items-center justify-center p-4">
+    <div class="w-full max-w-md bg-white/95 text-gray-800 rounded-xl p-6 shadow-2xl">
+        <div class="text-center mb-4"><h2 class="text-2xl font-bold text-ungu-utama">⚡ Xdnry777</h2><p class="text-sm text-gray-500 mt-1" id="waktu"></p></div>
+        <div class="bg-green-50 border border-green-200 p-3 rounded-lg text-center mb-4"><i class="fa fa-check-circle text-green-500 text-xl"></i><p class="font-semibold text-green-700">PEMBAYARAN BERHASIL</p></div>
+
+        <div class="space-y-2 text-sm mb-4 border-b border-dashed pb-4">
+            <div class="flex justify-between"><span class="text-gray-500">Game</span><span id="sNama">-</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">ID Akun</span><span id="sId">-</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Nickname</span><span id="sNick">-</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Item</span><span id="sItem">-</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Metode Bayar</span><span id="sMetode">-</span></div>
         </div>
 
-        <!-- Status Berhasil -->
-        <div class="bg-green-50 border border-green-200 text-green-700 font-bold text-center py-3 rounded-lg mb-6 text-xl">
-            ✅ PEMBAYARAN BERHASIL
+        <div class="space-y-1 text-sm mb-6">
+            <div class="flex justify-between"><span>Harga</span><span id="sHarga">-</span></div>
+            <div class="flex justify-between"><span>Kode Unik</span><span>Rp 50</span></div>
+            <div class="flex justify-between font-bold text-ungu-utama text-lg pt-2 border-t"><span>TOTAL</span><span id="sTotal">-</span></div>
         </div>
 
-        <!-- Data Pesanan -->
-        <div class="space-y-3 text-lg">
-            <div class="flex justify-between"><span class="text-gray-500">Game</span><span id="dataGame">-</span></div>
-            <div class="flex justify-between"><span class="text-gray-500">ID Akun</span><span id="dataId">-</span></div>
-            <div class="flex justify-between"><span class="text-gray-500">Nickname</span><span id="dataNick">-</span></div>
-            <div class="flex justify-between"><span class="text-gray-500">Item</span><span id="dataItem">-</span></div>
-            <div class="flex justify-between"><span class="text-gray-500">Metode</span><span id="dataMetode" class="font-medium">-</span></div>
-        </div>
-
-        <hr class="my-4 border-dashed">
-
-        <!-- Rincian Harga -->
-        <div class="space-y-2">
-            <div class="flex justify-between"><span class="text-gray-500">Harga</span><span id="dataHarga">-</span></div>
-            <div class="flex justify-between"><span class="text-gray-500">Kode Unik</span><span>Rp 50</span></div>
-        </div>
-
-        <div class="flex justify-between text-2xl font-bold text-ungu-utama mt-4 pt-2 border-t">
-            <span>TOTAL</span>
-            <span id="dataTotal">-</span>
-        </div>
-
-        <p class="text-center text-gray-500 mt-6">Terima kasih! Proses 1-5 menit</p>
-
-        <a href="index.html" class="block w-full bg-ungu-utama text-white text-center font-bold py-4 rounded-lg mt-6 text-lg">
-            Kembali ke Beranda
-        </a>
+        <p class="text-center text-sm">Terima kasih! Proses 1-5 menit</p>
+        <a href="index.html" class="block w-full bg-ungu-utama text-white py-3 rounded-lg text-center font-bold mt-6">Kembali ke Beranda</a>
     </div>
 
     <script>
         window.onload = function() {
-            // Tampilkan Waktu Otomatis
-            const sekarang = new Date();
-            const waktu = sekarang.toLocaleDateString('id-ID', {day:'numeric', month:'long', year:'numeric'}) + ' ' + sekarang.toLocaleTimeString('id-ID', {hour:'2-digit', minute:'2-digit'}) + ' WIB';
-            document.getElementById('waktuSekarang').textContent = waktu;
-
-            // AMBIL DATA DAN TAMPILKAN - HANYA METODE YANG DIPILIH
-            document.getElementById('dataGame').textContent = localStorage.getItem('namaGame') || '-';
-            document.getElementById('dataId').textContent = localStorage.getItem('id') || '-';
-            document.getElementById('dataNick').textContent = localStorage.getItem('nickname') || '-';
-            document.getElementById('dataItem').textContent = localStorage.getItem('item') || '-';
-            document.getElementById('dataMetode').textContent = localStorage.getItem('metodeBayar') || '-'; // ⬅️ INI KUNCINYA
-            document.getElementById('dataHarga').textContent = 'Rp ' + (localStorage.getItem('hargaDasar') || '0');
-            document.getElementById('dataTotal').textContent = 'Rp ' + (localStorage.getItem('totalAkhir') || '0').toLocaleString('id-ID');
+            const tgl = new Date().toLocaleDateString('id-ID', {day:'numeric', month:'long', year:'numeric'}) + ' ' + new Date().toLocaleTimeString('id-ID', {hour:'2-digit', minute:'2-digit'}) + ' WIB';
+            document.getElementById('waktu').textContent = tgl;
+            document.getElementById('sNama').textContent = localStorage.getItem('namaGame');
+            document.getElementById('sId').textContent = localStorage.getItem('id');
+            document.getElementById('sNick').textContent = localStorage.getItem('nickname');
+            document.getElementById('sItem').textContent = localStorage.getItem('item');
+            document.getElementById('sMetode').textContent = localStorage.getItem('metodeBayar');
+            document.getElementById('sHarga').textContent = 'Rp ' + localStorage.getItem('hargaDasar');
+            document.getElementById('sTotal').textContent = 'Rp ' + localStorage.getItem('totalAkhir')?.toLocaleString('id-ID');
         }
     </script>
 </body>
