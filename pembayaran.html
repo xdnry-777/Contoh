@@ -83,7 +83,11 @@
                     </div>
                     <div class="flex justify-between">
                         <span>ID Akun</span>
-                        <span class="font-medium text-white">12345678 (Server 1234)</span>
+                        <span class="font-medium text-white">6838636</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Nickname</span>
+                        <span class="font-medium text-white">Player123</span>
                     </div>
                     <div class="flex justify-between">
                         <span>Item</span>
@@ -91,7 +95,7 @@
                     </div>
                     <div class="flex justify-between text-lg font-bold text-ungu-terang pt-2 border-t border-ungu-utama/30">
                         <span>Total Bayar</span>
-                        <span>Rp 20.000</span>
+                        <span>Rp 20.050</span>
                     </div>
                 </div>
             </div>
@@ -137,12 +141,10 @@
                 </div>
             </div>
 
-            <!-- Tombol Konfirmasi Langsung ke WA -->
-            <a href="https://wa.me/6285169935089?text=Halo%20Admin%20Xdnry777%2C%20saya%20sudah%20melakukan%20pembayaran%20untuk%20pesanan%20Mobile%20Legends%20ID%2012345678%20sebesar%20Rp%2020.050.%20Terima%20kasih." 
-               target="_blank"
-               class="block w-full bg-gradient-to-r from-ungu-utama to-ungu-neon hover:from-ungu-terang hover:to-ungu-neon py-4 rounded-xl font-bold text-lg transition-all glow-hover text-center">
+            <!-- Tombol Aksi Ganda: Buka WA & Masuk Struk -->
+            <button onclick="prosesPembayaran()" class="w-full bg-gradient-to-r from-ungu-utama to-ungu-neon hover:from-ungu-terang hover:to-ungu-neon py-4 rounded-xl font-bold text-lg transition-all glow-hover">
                 <i class="fa fa-check-circle mr-2"></i> Saya Sudah Bayar
-            </a>
+            </button>
 
             <!-- Info Bantuan -->
             <div class="text-center text-gray-400 text-sm">
@@ -166,5 +168,38 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function prosesPembayaran() {
+            // Pesan struk otomatis untuk WhatsApp
+            const pesanStruk = `📋 *STRUK PEMBAYARAN XDNRY777*
+
+✅ *STATUS: BERHASIL DITERIMA*
+
+📌 No. Pesanan: XDN-8294-001
+🎮 Game: Mobile Legends
+👤 ID Akun: 6838636
+💬 Nickname: Player123
+💎 Item: 70 Diamonds
+💳 Metode Bayar: DANA / QRIS
+💰 Total Bayar: Rp 20.050
+
+Terima kasih telah berbelanja!
+Saldo akan diproses segera.
+
+~ Xdnry777 Store ~`;
+
+            // Encode pesan agar terbaca di link WA
+            const linkWA = `https://wa.me/6285169935089?text=${encodeURIComponent(pesanStruk)}`;
+
+            // Buka WhatsApp di tab baru
+            window.open(linkWA, '_blank');
+
+            // Pindah ke halaman struk di tab ini
+            setTimeout(() => {
+                window.location.href = 'struk.html';
+            }, 500);
+        }
+    </script>
 </body>
 </html>
