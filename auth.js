@@ -1,4 +1,4 @@
-// Sistem Autentikasi & Menu Xdnry777
+// Sistem Autentikasi & Akun Xdnry777
 let isLoggedIn = localStorage.getItem('userLogin') === 'true';
 let userName = localStorage.getItem('userNama') || '';
 let userEmail = localStorage.getItem('userEmail') || '';
@@ -6,26 +6,26 @@ let userEmail = localStorage.getItem('userEmail') || '';
 // Cek Akses Halaman
 function cekAkses() {
     const halaman = window.location.pathname.split('/').pop();
-    const halamanBebas = ['', 'index.html', 'login.html'];
+    const halamanBebas = ['', 'index.html', 'login.html', 'daftar.html', 'bantuan.html', 'syarat.html'];
     if (!isLoggedIn && !halamanBebas.includes(halaman)) {
         alert('⚠️ Silakan Login Dulu Sebelum Berbelanja!');
         window.location.href = 'login.html';
     }
 }
 
-// Fungsi Menu Samping - SUDAH DIPERBAIKI
+// Menu Samping
 function bukaMenu() {
     document.getElementById('menuSamping').classList.remove('-translate-x-full');
     document.getElementById('lapisanTutup').classList.remove('hidden');
-    document.body.style.overflow = 'hidden'; // Kunci layar saat menu terbuka
+    document.body.style.overflow = 'hidden';
 }
 function tutupMenu() {
     document.getElementById('menuSamping').classList.add('-translate-x-full');
     document.getElementById('lapisanTutup').classList.add('hidden');
-    document.body.style.overflow = ''; // Buka kembali layar
+    document.body.style.overflow = '';
 }
 
-// Login Berhasil
+// Simpan Login
 function setLogin(nama, email) {
     localStorage.setItem('userLogin', 'true');
     localStorage.setItem('userNama', nama);
@@ -45,7 +45,13 @@ function setLogout() {
     window.location.href = 'index.html';
 }
 
-// Update Tampilan User & Menu
+// Cek Akun Manual
+function cekAkun(username, password) {
+    const daftarAkun = JSON.parse(localStorage.getItem('daftarAkun') || '[]');
+    return daftarAkun.find(a => (a.username === username || a.email === username) && a.password === password);
+}
+
+// Update Tampilan
 function updateTampilan() {
     const areaTombol = document.querySelector('.area-user');
     const menuUser = document.querySelector('.menu-user');
