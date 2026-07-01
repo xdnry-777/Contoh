@@ -9,13 +9,14 @@
     <script>
         tailwind.config = { theme: { extend: { colors: { ungu: { utama:'#6B21A8', terang:'#A855F7', neon:'#D946EF' } } } } }
     </script>
-    <style>.bg-gradasi { background: linear-gradient(135deg, #050505 0%, #1A102E 40%, #4C1D95 100%); } .text-shadow { text-shadow: 0 0 8px rgba(168,85,247,0.5); }</style>
+    <style>.bg-gradasi { background: linear-gradient(135deg, #050505 0%, #1A102E 40%, #4C1D95 100%); }</style>
 </head>
 <body class="bg-gradasi min-h-screen font-sans text-white">
-    <!-- Menu Samping -->
+    <!-- Menu Samping - Logo DI DALAM SINI -->
     <div id="menuSamping" class="-translate-x-full fixed top-0 left-0 h-full w-72 bg-gray-900/98 backdrop-blur-md z-[60] transition-transform duration-300 border-r border-ungu-utama/30">
         <div class="p-4 h-full flex flex-col">
             <div class="flex justify-between items-center mb-6 pb-4 border-b border-ungu-utama/30">
+                <!-- Logo Xdnry777 SEKARANG DI SINI -->
                 <span class="text-xl font-bold text-ungu-terang">⚡ Xdnry777</span>
                 <button onclick="tutupMenu()" class="text-xl"><i class="fa fa-times"></i></button>
             </div>
@@ -23,7 +24,7 @@
             <div class="menu-user mb-4"></div>
 
             <nav class="flex-1 space-y-2">
-                <a href="index.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-ungu-utama/30"><i class="fa fa-home w-5"></i> Beranda</a>
+                <a href="index.html" class="flex items-center gap-3 p-3 rounded-lg bg-ungu-utama/30"><i class="fa fa-home w-5"></i> Beranda</a>
                 <a href="pilih-game.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-ungu-utama/30"><i class="fa fa-gamepad w-5"></i> Top Up Game</a>
                 <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-ungu-utama/30"><i class="fa fa-history w-5"></i> Riwayat Pesanan</a>
                 <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-ungu-utama/30"><i class="fa fa-question-circle w-5"></i> Bantuan</a>
@@ -35,13 +36,14 @@
             </div>
         </div>
     </div>
+
+    <!-- Lapisan Gelap Klik untuk Tutup -->
     <div onclick="tutupMenu()" class="hidden fixed inset-0 bg-black/50 z-50" id="lapisanTutup"></div>
 
-    <!-- Navbar -->
+    <!-- Navbar - Sekarang BERSIH: Hanya Garis 3 & Tombol Masuk -->
     <nav class="backdrop-blur-md bg-black/30 sticky top-0 z-40 border-b border-ungu-utama/30">
-        <div class="container mx-auto px-4 py-3 flex items-center justify-between relative">
-            <button onclick="bukaMenu(); document.getElementById('lapisanTutup').classList.remove('hidden')" class="text-2xl"><i class="fa fa-bars"></i></button>
-            <div class="absolute left-1/2 -translate-x-1/2 text-2xl font-bold text-ungu-terang text-shadow"><i class="fa fa-bolt mr-1"></i>Xdnry777</div>
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <button onclick="bukaMenu()" class="text-2xl"><i class="fa fa-bars"></i></button>
             <div class="area-user"></div>
         </div>
     </nav>
@@ -49,7 +51,7 @@
     <!-- Isi Halaman -->
     <section class="container mx-auto px-4 py-16 text-center">
         <h1 class="text-4xl font-bold mb-4">Selamat Datang Di</h1>
-        <h2 class="text-4xl font-bold text-ungu-terang text-shadow mb-8">Xdnry777</h2>
+        <h2 class="text-4xl font-bold text-ungu-terang mb-8">Xdnry777</h2>
         <p class="text-gray-300 text-lg mb-3">Tempat terbaik top up game & kebutuhan digital!</p>
         <p class="text-gray-400 mb-10">Harga murah, proses cepat, dijamin aman.</p>
         <a href="pilih-game.html" class="inline-block bg-gradient-to-r from-ungu-utama to-ungu-neon px-10 py-4 rounded-xl font-bold text-xl">Mulai Top Up <i class="fa fa-arrow-right ml-2"></i></a>
