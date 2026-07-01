@@ -57,39 +57,31 @@
 
             <!-- Metode Pembayaran -->
             <div class="bg-card rounded-xl p-6 border border-ungu-utama/40">
-                <h2 class="text-lg font-semibold mb-4">Metode Pembayaran</h2>
+                <h2 class="text-lg font-semibold mb-4">Pilih Metode Pembayaran</h2>
 
                 <!-- QRIS -->
-                <div class="mb-5 p-4 border border-ungu-terang/50 rounded-lg bg-ungu-terang/10">
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="radio" name="bayar" checked class="w-5 h-5 accent-ungu-terang">
-                        <span class="text-xl font-bold">QRIS</span>
-                        <span class="text-xs bg-ungu-neon px-2 py-0.5 rounded">NOXZCRUEL</span>
-                    </label>
-                    <div class="mt-4 text-center">
-                        <!-- Tempat QRIS -->
-                        <div class="bg-white p-4 rounded-lg inline-block">
-                            <!-- Ganti src dengan link gambar QRIS kamu nanti -->
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=NOXZCRUEL" alt="QRIS NOXZCRUEL" class="w-44 h-44 rounded">
-                        </div>
-                        <p class="text-sm text-gray-400 mt-3">Scan kode QRIS ini dari aplikasi pembayaran apa saja</p>
-                        <p class="text-ungu-terang mt-2">Atau nama: <b>NOXZCRUEL</b></p>
+                <label class="mb-5 p-4 border border-ungu-terang/50 rounded-lg bg-ungu-terang/10 flex items-center gap-3 cursor-pointer block">
+                    <input type="radio" name="metodeBayar" value="QRIS" checked class="w-5 h-5 accent-ungu-terang">
+                    <span class="text-xl font-bold">QRIS</span>
+                    <span class="text-xs bg-ungu-neon px-2 py-0.5 rounded">NOXZCRUEL</span>
+                </label>
+                <div class="mb-5 text-center">
+                    <div class="bg-white p-4 rounded-lg inline-block">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=NOXZCRUEL" alt="QRIS" class="w-44 h-44 rounded">
                     </div>
+                    <p class="text-sm text-gray-400 mt-3">Scan kode QRIS dari aplikasi pembayaran apa saja</p>
                 </div>
 
                 <!-- DANA -->
-                <div class="p-4 border border-ungu-utama/30 rounded-lg">
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="radio" name="bayar" class="w-5 h-5 accent-ungu-terang">
-                        <span class="text-xl font-bold">DANA</span>
-                        <span class="text-xs bg-blue-500 px-2 py-0.5 rounded">Resmi</span>
-                    </label>
-                    <div class="mt-3 pl-8">
-                        <p class="text-gray-300">Nomor Tujuan:</p>
-                        <p class="text-xl font-bold text-ungu-terang">0851-6993-5089</p>
-                        <p class="text-sm text-gray-400">a.n. EN**** YU******</p>
-                        <p class="text-sm text-yellow-400 mt-2">💡 Tambah kode unik +Rp 50 → <b id="totalBayar">-</b></p>
-                    </div>
+                <label class="p-4 border border-ungu-utama/30 rounded-lg flex items-center gap-3 cursor-pointer block">
+                    <input type="radio" name="metodeBayar" value="DANA" class="w-5 h-5 accent-ungu-terang">
+                    <span class="text-xl font-bold">DANA</span>
+                    <span class="text-xs bg-blue-500 px-2 py-0.5 rounded">Resmi</span>
+                </label>
+                <div class="mt-3 pl-8 mb-2">
+                    <p class="text-xl font-bold text-ungu-terang">0851-6993-5089</p>
+                    <p class="text-sm text-gray-400">a.n. EN**** YU******</p>
+                    <p class="text-sm text-yellow-400 mt-2">+ Kode Unik Rp 50 → <b id="totalBayar">-</b></p>
                 </div>
             </div>
 
@@ -101,20 +93,17 @@
 
     <script>
         window.onload = function() {
-            // Ambil data dari penyimpanan
             const namaGame = localStorage.getItem('namaGame');
             const id = localStorage.getItem('id');
             const nick = localStorage.getItem('nickname');
             const item = localStorage.getItem('item');
             const harga = localStorage.getItem('hargaDasar');
 
-            // Cek jika data ada, tampilkan
             if(namaGame) document.getElementById('tNama').textContent = namaGame;
             if(id) document.getElementById('tId').textContent = id;
             if(nick) document.getElementById('tNick').textContent = nick;
             if(item) document.getElementById('tItem').textContent = item;
 
-            // Hitung total
             if(harga) {
                 let hargaBersih = parseInt(harga.replace(/\./g,''));
                 let total = hargaBersih + 50;
@@ -125,27 +114,28 @@
         }
 
         function sudahBayar() {
-            // Ambil data untuk pesan WA
+            // Ambil metode yang dipilih
+            const metodeTerpilih = document.querySelector('input[name="metodeBayar"]:checked').value;
+
             const nama = localStorage.getItem('namaGame') || '-';
             const id = localStorage.getItem('id') || '-';
             const nick = localStorage.getItem('nickname') || '-';
             const item = localStorage.getItem('item') || '-';
             const total = localStorage.getItem('totalAkhir')?.toLocaleString('id-ID') || '-';
 
-            const pesan = `📋 *STRUK PEMBAYARAN XDNRY777*
-
-✅ *STATUS: BERHASIL*
+            // Pesan WA sesuai format yang kamu mau
+            const pesan = `📋 STRUK XDNRY777
+✅ BERHASIL
 
 🎮 Game: ${nama}
-👤 ID Akun: ${id}
-💬 Nickname: ${nick}
+👤 ID: ${id}
+💬 Nick: ${nick}
 💎 Item: ${item}
-💰 Total Bayar: Rp ${total}
+💳 Metode Bayar: ${metodeTerpilih}
+💰 Bayar: Rp ${total}
 
-Terima kasih telah berbelanja!
-~ Xdnry777 Store ~`;
+Terima Kasih!`;
 
-            // Buka WA lalu pindah ke struk
             window.open(`https://wa.me/6285169935089?text=${encodeURIComponent(pesan)}`, '_blank');
             setTimeout(() => window.location.href = 'struk.html', 600);
         }
