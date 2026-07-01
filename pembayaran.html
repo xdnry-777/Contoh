@@ -7,198 +7,82 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ungu: {
-                            gelap: '#2D0C5E',
-                            utama: '#6B21A8',
-                            terang: '#A855F7',
-                            neon: '#D946EF'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                }
-            }
-        }
+        tailwind.config = { theme: { extend: { colors: { ungu: { gelap:'#2D0C5E', utama:'#6B21A8', terang:'#A855F7', neon:'#D946EF' } } } } }
     </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .bg-gradasi {
-                background: linear-gradient(135deg, #050505 0%, #1A102E 40%, #4C1D95 100%);
-            }
-            .bg-ungu-card {
-                background: linear-gradient(145deg, rgba(107, 33, 168, 0.2), rgba(45, 12, 94, 0.3));
-            }
-            .text-shadow {
-                text-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
-            }
-            .glow {
-                box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
-            }
-            .glow-hover:hover {
-                box-shadow: 0 0 20px rgba(217, 70, 239, 0.6);
-            }
-        }
+    <style>
+        .bg-gradasi { background: linear-gradient(135deg, #050505 0%, #1A102E 40%, #4C1D95 100%); }
+        .bg-card { background: linear-gradient(145deg, rgba(107,33,168,0.2), rgba(45,12,94,0.3)); }
     </style>
 </head>
 <body class="bg-gradasi min-h-screen font-sans text-white">
-    <!-- Navbar -->
     <nav class="backdrop-blur-md bg-black/30 sticky top-0 z-50 border-b border-ungu-utama/30">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="text-2xl font-bold text-ungu-terang text-shadow">
-                <i class="fa fa-bolt mr-1"></i>Xdnry777
-            </div>
-            <div class="hidden md:flex space-x-6 text-gray-200">
-                <a href="index.html" class="hover:text-ungu-terang transition">Beranda</a>
-                <a href="pilih-game.html" class="hover:text-ungu-terang transition">Daftar Game</a>
-                <a href="#" class="hover:text-ungu-terang transition">Cara Beli</a>
-                <a href="#" class="hover:text-ungu-terang transition">Bantuan</a>
-            </div>
-            <button class="bg-ungu-utama hover:bg-ungu-terang px-4 py-2 rounded-lg transition glow-hover">
-                <i class="fa fa-user mr-1"></i>Masuk
-            </button>
-            <button class="md:hidden text-xl"><i class="fa fa-bars"></i></button>
+            <div class="text-2xl font-bold text-ungu-terang">⚡Xdnry777</div>
         </div>
     </nav>
 
-    <section class="container mx-auto px-4 py-12">
-        <a href="pilih-game.html" class="inline-flex items-center text-ungu-terang mb-6 hover:text-ungu-neon">
-            <i class="fa fa-arrow-left mr-2"></i> Kembali
-        </a>
-
+    <section class="container mx-auto px-4 py-10">
+        <a href="pilih-game.html" class="inline-flex items-center text-ungu-terang mb-6"><i class="fa fa-arrow-left mr-2"></i>Kembali</a>
         <h1 class="text-2xl font-bold mb-8 text-center">Selesaikan Pembayaran</h1>
 
-        <div class="max-w-2xl mx-auto space-y-6">
-            <!-- Ringkasan Pesanan -->
-            <div class="bg-ungu-card backdrop-blur-sm rounded-xl p-6 border border-ungu-utama/40 glow">
+        <div class="max-w-xl mx-auto space-y-6">
+            <div class="bg-card rounded-xl p-6 border border-ungu-utama/40">
                 <h2 class="text-lg font-semibold mb-4 border-b border-ungu-utama/30 pb-2">Ringkasan Pesanan</h2>
                 <div class="space-y-2 text-gray-300">
-                    <div class="flex justify-between">
-                        <span>Layanan</span>
-                        <span class="font-medium text-white">Mobile Legends</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>ID Akun</span>
-                        <span class="font-medium text-white">6838636</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>Nickname</span>
-                        <span class="font-medium text-white">Player123</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>Item</span>
-                        <span class="font-medium text-white">70 Diamonds</span>
-                    </div>
-                    <div class="flex justify-between text-lg font-bold text-ungu-terang pt-2 border-t border-ungu-utama/30">
-                        <span>Total Bayar</span>
-                        <span>Rp 20.050</span>
-                    </div>
+                    <div class="flex justify-between"><span>Layanan</span><span id="tNama">-</span></div>
+                    <div class="flex justify-between"><span>ID Akun</span><span id="tId">-</span></div>
+                    <div class="flex justify-between"><span>Nickname</span><span id="tNick">-</span></div>
+                    <div class="flex justify-between"><span>Item</span><span id="tItem">-</span></div>
+                    <div class="flex justify-between font-bold text-ungu-terang pt-2 border-t border-ungu-utama/30"><span>Total Bayar</span><span id="tTotal">-</span></div>
                 </div>
             </div>
 
-            <!-- Metode Pembayaran -->
-            <div class="bg-ungu-card backdrop-blur-sm rounded-xl p-6 border border-ungu-utama/40 glow">
-                <h2 class="text-lg font-semibold mb-6">Pilih Metode Pembayaran</h2>
-
-                <!-- Opsi QRIS -->
-                <div class="mb-6 p-4 border border-ungu-terang/50 rounded-xl bg-ungu-terang/10">
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="radio" name="metode" checked class="w-5 h-5 accent-ungu-terang">
-                        <span class="text-xl font-bold">QRIS</span>
-                        <span class="text-xs bg-ungu-neon/80 px-2 py-0.5 rounded">NOXZCRUEL</span>
-                    </label>
-                    <div class="mt-4 text-center">
-                        <div class="bg-white p-3 rounded-lg inline-block">
-                            <div class="w-40 h-40 bg-gray-200 flex items-center justify-center text-gray-800 text-xs font-bold">
-                                <div class="text-center">
-                                    <div class="text-3xl mb-1">📷</div>
-                                    Scan QR<br>Disini
-                                </div>
-                            </div>
-                        </div>
-                        <p class="text-sm text-gray-400 mt-3">Scan kode QR menggunakan aplikasi pembayaran apa saja</p>
-                        <p class="text-ungu-terang font-mono mt-2">Nomor Referensi: <b>XDN777-8294</b></p>
-                    </div>
+            <div class="bg-card rounded-xl p-6 border border-ungu-utama/40">
+                <h2 class="text-lg font-semibold mb-4">Metode Pembayaran</h2>
+                <div class="mb-5 p-3 border border-ungu-terang/50 rounded-lg bg-ungu-terang/10">
+                    <label class="flex items-center gap-3"><input type="radio" name="bayar" checked class="w-5 h-5 accent-ungu-terang"><span class="text-xl font-bold">QRIS</span><span class="text-xs bg-ungu-neon px-2 py-0.5 rounded">NOXZCRUEL</span></label>
                 </div>
-
-                <!-- Opsi DANA -->
-                <div class="p-4 border border-ungu-utama/30 rounded-xl hover:border-ungu-terang/50 transition">
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="radio" name="metode" class="w-5 h-5 accent-ungu-terang">
-                        <span class="text-xl font-bold">DANA</span>
-                        <span class="text-xs bg-blue-500/80 px-2 py-0.5 rounded">Resmi</span>
-                    </label>
-                    <div class="mt-4 pl-8">
-                        <p class="text-gray-300">Nomor Tujuan:</p>
+                <div class="p-3 border border-ungu-utama/30 rounded-lg">
+                    <label class="flex items-center gap-3"><input type="radio" name="bayar" class="w-5 h-5 accent-ungu-terang"><span class="text-xl font-bold">DANA</span><span class="text-xs bg-blue-500 px-2 py-0.5 rounded">Resmi</span></label>
+                    <div class="mt-3 pl-8">
                         <p class="text-xl font-bold text-ungu-terang">0851-6993-5089</p>
-                        <p class="text-gray-400 text-sm">a.n. EN**** YU******</p>
-                        <p class="text-sm text-yellow-400 mt-2">💡 Masukkan kode unik <b>+Rp 50</b> di akhir nominal: <b>Rp 20.050</b></p>
+                        <p class="text-sm text-gray-400">a.n. EN**** YU******</p>
+                        <p class="text-sm text-yellow-400 mt-2">+50 → <span id="totalBayar">-</span></p>
                     </div>
                 </div>
             </div>
 
-            <!-- Tombol Aksi Ganda: Buka WA & Masuk Struk -->
-            <button onclick="prosesPembayaran()" class="w-full bg-gradient-to-r from-ungu-utama to-ungu-neon hover:from-ungu-terang hover:to-ungu-neon py-4 rounded-xl font-bold text-lg transition-all glow-hover">
-                <i class="fa fa-check-circle mr-2"></i> Saya Sudah Bayar
+            <button onclick="sudahBayar()" class="w-full bg-gradient-to-r from-ungu-utama to-ungu-neon py-4 rounded-xl font-bold text-lg">
+                <i class="fa fa-check-circle mr-2"></i>Saya Sudah Bayar
             </button>
-
-            <!-- Info Bantuan -->
-            <div class="text-center text-gray-400 text-sm">
-                <p>Butuh bantuan konfirmasi pembayaran?</p>
-                <a href="https://wa.me/6285169935089" target="_blank" class="text-ungu-terang hover:text-ungu-neon font-medium">Hubungi Admin via WhatsApp <i class="fa fa-whatsapp ml-1"></i></a>
-            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-black/40 border-t border-ungu-utama/30 py-8 mt-10">
-        <div class="container mx-auto px-4">
-            <div class="text-center text-gray-400">
-                <div class="text-xl font-bold text-ungu-terang mb-4">Xdnry777</div>
-                <p>© 2026 Xdnry777. Semua Hak Dilindungi Undang-Undang</p>
-                <div class="mt-4 space-x-4 text-xl">
-                    <a href="https://wa.me/6285169935089" target="_blank" class="hover:text-ungu-terang"><i class="fa fa-whatsapp"></i></a>
-                    <a href="#" class="hover:text-ungu-terang"><i class="fa fa-instagram"></i></a>
-                    <a href="#" class="hover:text-ungu-terang"><i class="fa fa-facebook"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <script>
-        function prosesPembayaran() {
-            // Pesan struk otomatis untuk WhatsApp
-            const pesanStruk = `📋 *STRUK PEMBAYARAN XDNRY777*
+        window.onload = function() {
+            document.getElementById('tNama').textContent = localStorage.getItem('namaGame');
+            document.getElementById('tId').textContent = localStorage.getItem('id');
+            document.getElementById('tNick').textContent = localStorage.getItem('nickname');
+            document.getElementById('tItem').textContent = localStorage.getItem('item');
+            let harga = parseInt(localStorage.getItem('hargaDasar').replace('.',''));
+            let total = harga + 50;
+            localStorage.setItem('totalAkhir', total);
+            document.getElementById('tTotal').textContent = 'Rp ' + total.toLocaleString('id-ID');
+            document.getElementById('totalBayar').textContent = 'Rp ' + total.toLocaleString('id-ID');
+        }
+        function sudahBayar() {
+            const pesan = `📋 *STRUK XDNRY777*
+✅ BERHASIL
 
-✅ *STATUS: BERHASIL DITERIMA*
+🎮 Game: ${localStorage.getItem('namaGame')}
+👤 ID: ${localStorage.getItem('id')}
+💬 Nick: ${localStorage.getItem('nickname')}
+💎 Item: ${localStorage.getItem('item')}
+💰 Bayar: Rp ${localStorage.getItem('totalAkhir')?.toLocaleString('id-ID')}
 
-📌 No. Pesanan: XDN-8294-001
-🎮 Game: Mobile Legends
-👤 ID Akun: 6838636
-💬 Nickname: Player123
-💎 Item: 70 Diamonds
-💳 Metode Bayar: DANA / QRIS
-💰 Total Bayar: Rp 20.050
-
-Terima kasih telah berbelanja!
-Saldo akan diproses segera.
-
-~ Xdnry777 Store ~`;
-
-            // Encode pesan agar terbaca di link WA
-            const linkWA = `https://wa.me/6285169935089?text=${encodeURIComponent(pesanStruk)}`;
-
-            // Buka WhatsApp di tab baru
-            window.open(linkWA, '_blank');
-
-            // Pindah ke halaman struk di tab ini
-            setTimeout(() => {
-                window.location.href = 'struk.html';
-            }, 500);
+Terima Kasih!`;
+            window.open(`https://wa.me/6285169935089?text=${encodeURIComponent(pesan)}`,'_blank');
+            setTimeout(()=>window.location.href='struk.html', 600);
         }
     </script>
 </body>
