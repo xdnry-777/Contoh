@@ -42,6 +42,9 @@
             .glow-hover:hover {
                 box-shadow: 0 0 20px rgba(217, 70, 239, 0.6);
             }
+            .game-card:hover {
+                transform: translateY(-6px);
+            }
         }
     </style>
 </head>
@@ -72,61 +75,127 @@
 
         <h1 class="text-2xl font-bold mb-8 text-center">Pilih Game Kamu</h1>
 
-        <!-- Kotak Pilih Layanan & Isi Data -->
-        <div class="max-w-3xl mx-auto bg-ungu-card backdrop-blur-sm rounded-2xl p-6 border border-ungu-utama/40 glow mb-10">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                <div class="text-left">
-                    <label class="text-gray-400 text-sm mb-1 block">Pilih Layanan</label>
-                    <select class="w-full bg-black/40 border border-ungu-utama/50 rounded-lg px-3 py-3 focus:outline-none focus:ring-2 focus:ring-ungu-terang">
-                        <option>Mobile Legends</option>
-                        <option>Free Fire</option>
-                        <option>PUBG Mobile</option>
-                        <option>Valorant</option>
-                        <option>Higgs Domino</option>
-                        <option>Pulsa & Data</option>
-                    </select>
+        <!-- Daftar Game dengan Logo & Harga -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <!-- Mobile Legends -->
+            <div class="game-card bg-ungu-card backdrop-blur-sm rounded-xl p-5 border border-ungu-utama/40 hover:border-ungu-terang transition-all cursor-pointer glow-hover" onclick="pilihGame('Mobile Legends', '70 Diamonds', '20.000')">
+                <div class="flex items-center gap-4 mb-3">
+                    <div class="w-16 h-16 bg-red-600 rounded-xl flex items-center justify-center text-2xl">⚔️</div>
+                    <div>
+                        <h3 class="text-lg font-bold">Mobile Legends</h3>
+                        <p class="text-gray-400 text-sm">Diamonds</p>
+                    </div>
                 </div>
-                <div class="text-left">
-                    <label class="text-gray-400 text-sm mb-1 block">ID Pengguna</label>
-                    <input type="text" placeholder="Masukkan ID" class="w-full bg-black/40 border border-ungu-utama/50 rounded-lg px-3 py-3 focus:outline-none focus:ring-2 focus:ring-ungu-terang">
-                </div>
-                <div class="text-left">
-                    <label class="text-gray-400 text-sm mb-1 block">Server (Jika Ada)</label>
-                    <input type="text" placeholder="Contoh: 1234" class="w-full bg-black/40 border border-ungu-utama/50 rounded-lg px-3 py-3 focus:outline-none focus:ring-2 focus:ring-ungu-terang">
+                <div class="border-t border-ungu-utama/30 pt-3">
+                    <p class="text-sm text-gray-300">70 Diamonds</p>
+                    <p class="text-xl font-bold text-ungu-terang">Rp 20.000</p>
                 </div>
             </div>
-            <button class="w-full bg-gradient-to-r from-ungu-utama to-ungu-neon hover:from-ungu-terang hover:to-ungu-neon py-3 rounded-lg font-semibold transition-all glow-hover">
-                Lanjutkan Pemesanan <i class="fa fa-arrow-right ml-2"></i>
-            </button>
+
+            <!-- Free Fire -->
+            <div class="game-card bg-ungu-card backdrop-blur-sm rounded-xl p-5 border border-ungu-utama/40 hover:border-ungu-terang transition-all cursor-pointer glow-hover" onclick="pilihGame('Free Fire', '70 Diamonds', '18.500')">
+                <div class="flex items-center gap-4 mb-3">
+                    <div class="w-16 h-16 bg-orange-600 rounded-xl flex items-center justify-center text-2xl">🔥</div>
+                    <div>
+                        <h3 class="text-lg font-bold">Free Fire</h3>
+                        <p class="text-gray-400 text-sm">Diamonds</p>
+                    </div>
+                </div>
+                <div class="border-t border-ungu-utama/30 pt-3">
+                    <p class="text-sm text-gray-300">70 Diamonds</p>
+                    <p class="text-xl font-bold text-ungu-terang">Rp 18.500</p>
+                </div>
+            </div>
+
+            <!-- PUBG Mobile -->
+            <div class="game-card bg-ungu-card backdrop-blur-sm rounded-xl p-5 border border-ungu-utama/40 hover:border-ungu-terang transition-all cursor-pointer glow-hover" onclick="pilihGame('PUBG Mobile', '60 UC', '22.000')">
+                <div class="flex items-center gap-4 mb-3">
+                    <div class="w-16 h-16 bg-yellow-600 rounded-xl flex items-center justify-center text-2xl">🔫</div>
+                    <div>
+                        <h3 class="text-lg font-bold">PUBG Mobile</h3>
+                        <p class="text-gray-400 text-sm">Unknown Cash</p>
+                    </div>
+                </div>
+                <div class="border-t border-ungu-utama/30 pt-3">
+                    <p class="text-sm text-gray-300">60 UC</p>
+                    <p class="text-xl font-bold text-ungu-terang">Rp 22.000</p>
+                </div>
+            </div>
+
+            <!-- Valorant -->
+            <div class="game-card bg-ungu-card backdrop-blur-sm rounded-xl p-5 border border-ungu-utama/40 hover:border-ungu-terang transition-all cursor-pointer glow-hover" onclick="pilihGame('Valorant', '475 VP', '75.000')">
+                <div class="flex items-center gap-4 mb-3">
+                    <div class="w-16 h-16 bg-red-700 rounded-xl flex items-center justify-center text-2xl">🎯</div>
+                    <div>
+                        <h3 class="text-lg font-bold">Valorant</h3>
+                        <p class="text-gray-400 text-sm">Valorant Points</p>
+                    </div>
+                </div>
+                <div class="border-t border-ungu-utama/30 pt-3">
+                    <p class="text-sm text-gray-300">475 VP</p>
+                    <p class="text-xl font-bold text-ungu-terang">Rp 75.000</p>
+                </div>
+            </div>
+
+            <!-- Higgs Domino -->
+            <div class="game-card bg-ungu-card backdrop-blur-sm rounded-xl p-5 border border-ungu-utama/40 hover:border-ungu-terang transition-all cursor-pointer glow-hover" onclick="pilihGame('Higgs Domino', '100 M Koin', '25.000')">
+                <div class="flex items-center gap-4 mb-3">
+                    <div class="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center text-2xl">💎</div>
+                    <div>
+                        <h3 class="text-lg font-bold">Higgs Domino</h3>
+                        <p class="text-gray-400 text-sm">Koin Emas</p>
+                    </div>
+                </div>
+                <div class="border-t border-ungu-utama/30 pt-3">
+                    <p class="text-sm text-gray-300">100 M Koin</p>
+                    <p class="text-xl font-bold text-ungu-terang">Rp 25.000</p>
+                </div>
+            </div>
+
+            <!-- Pulsa & Data -->
+            <div class="game-card bg-ungu-card backdrop-blur-sm rounded-xl p-5 border border-ungu-utama/40 hover:border-ungu-terang transition-all cursor-pointer glow-hover" onclick="pilihGame('Pulsa & Data', 'Pulsa 25.000', '27.000')">
+                <div class="flex items-center gap-4 mb-3">
+                    <div class="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center text-2xl">📱</div>
+                    <div>
+                        <h3 class="text-lg font-bold">Pulsa & Data</h3>
+                        <p class="text-gray-400 text-sm">Semua Operator</p>
+                    </div>
+                </div>
+                <div class="border-t border-ungu-utama/30 pt-3">
+                    <p class="text-sm text-gray-300">Pulsa 25.000</p>
+                    <p class="text-xl font-bold text-ungu-terang">Rp 27.000</p>
+                </div>
+            </div>
         </div>
 
-        <!-- Daftar Game Cepat -->
-        <h2 class="text-xl font-semibold mb-4 text-center">Atau Pilih Langsung</h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-            <div class="bg-ungu-card p-4 rounded-xl text-center border border-ungu-utama/30 hover:border-ungu-terang transition-all cursor-pointer hover:-translate-y-1">
-                <div class="text-4xl mb-2">🎮</div>
-                <p class="text-sm">Mobile Legends</p>
+        <!-- Form Isi Data (Muncul Setelah Pilih Game) -->
+        <div id="formPemesanan" class="hidden max-w-xl mx-auto bg-ungu-card backdrop-blur-sm rounded-2xl p-6 border border-ungu-utama/40 glow">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold">Data Pesanan</h2>
+                <button onclick="tutupForm()" class="text-gray-400 hover:text-white text-xl">&times;</button>
             </div>
-            <div class="bg-ungu-card p-4 rounded-xl text-center border border-ungu-utama/30 hover:border-ungu-terang transition-all cursor-pointer hover:-translate-y-1">
-                <div class="text-4xl mb-2">🔥</div>
-                <p class="text-sm">Free Fire</p>
+
+            <div class="bg-black/30 p-3 rounded-lg mb-4">
+                <p class="text-gray-400 text-sm">Game Dipilih:</p>
+                <p class="font-bold text-ungu-terang" id="namaGame">-</p>
+                <p class="text-sm text-gray-300" id="itemGame">-</p>
+                <p class="text-lg font-bold text-white" id="hargaGame">-</p>
             </div>
-            <div class="bg-ungu-card p-4 rounded-xl text-center border border-ungu-utama/30 hover:border-ungu-terang transition-all cursor-pointer hover:-translate-y-1">
-                <div class="text-4xl mb-2">🔫</div>
-                <p class="text-sm">PUBG Mobile</p>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="text-gray-400 text-sm mb-1 block">ID Pengguna / Nomor HP</label>
+                    <input type="text" id="idPengguna" placeholder="Masukkan ID Akun" class="w-full bg-black/40 border border-ungu-utama/50 rounded-lg px-3 py-3 focus:outline-none focus:ring-2 focus:ring-ungu-terang">
+                </div>
+                <div>
+                    <label class="text-gray-400 text-sm mb-1 block">Server (Khusus Game Online)</label>
+                    <input type="text" id="serverGame" placeholder="Kosongkan jika tidak ada" class="w-full bg-black/40 border border-ungu-utama/50 rounded-lg px-3 py-3 focus:outline-none focus:ring-2 focus:ring-ungu-terang">
+                </div>
             </div>
-            <div class="bg-ungu-card p-4 rounded-xl text-center border border-ungu-utama/30 hover:border-ungu-terang transition-all cursor-pointer hover:-translate-y-1">
-                <div class="text-4xl mb-2">⚔️</div>
-                <p class="text-sm">Valorant</p>
-            </div>
-            <div class="bg-ungu-card p-4 rounded-xl text-center border border-ungu-utama/30 hover:border-ungu-terang transition-all cursor-pointer hover:-translate-y-1">
-                <div class="text-4xl mb-2">💎</div>
-                <p class="text-sm">Higgs Domino</p>
-            </div>
-            <div class="bg-ungu-card p-4 rounded-xl text-center border border-ungu-utama/30 hover:border-ungu-terang transition-all cursor-pointer hover:-translate-y-1">
-                <div class="text-4xl mb-2">📱</div>
-                <p class="text-sm">Pulsa & Data</p>
-            </div>
+
+            <a href="pembayaran.html" class="mt-6 w-full inline-block bg-gradient-to-r from-ungu-utama to-ungu-neon hover:from-ungu-terang hover:to-ungu-neon py-3 rounded-lg font-semibold text-center transition-all glow-hover">
+                Lanjutkan Pemesanan <i class="fa fa-arrow-right ml-2"></i>
+            </a>
         </div>
     </section>
 
@@ -144,5 +213,19 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function pilihGame(nama, item, harga) {
+            document.getElementById('namaGame').textContent = nama;
+            document.getElementById('itemGame').textContent = item;
+            document.getElementById('hargaGame').textContent = 'Rp ' + harga;
+            document.getElementById('formPemesanan').classList.remove('hidden');
+            document.getElementById('formPemesanan').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function tutupForm() {
+            document.getElementById('formPemesanan').classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
