@@ -33,9 +33,6 @@
             .bg-ungu-card {
                 background: linear-gradient(145deg, rgba(107, 33, 168, 0.2), rgba(45, 12, 94, 0.3));
             }
-            .text-shadow {
-                text-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
-            }
             .struk-border {
                 border-image: linear-gradient(to right, #6B21A8, #A855F7, #6B21A8) 1;
             }
@@ -53,7 +50,7 @@
                 <h2 class="text-2xl font-bold text-ungu-utama">⚡ Xdnry777</h2>
                 <p class="text-sm text-gray-500">Layanan Top Up Terpercaya</p>
                 <div class="mt-2 text-xs text-gray-400">
-                    Dicetak: 01 Juli 2026, 17.33 WIB
+                    Dicetak: <span id="tanggalSekarang"></span>
                 </div>
             </div>
 
@@ -74,8 +71,12 @@
                     <span>Mobile Legends</span>
                 </div>
                 <div class="flex justify-between">
-                    <span class="text-gray-500">ID / Server</span>
-                    <span>12345678 (1234)</span>
+                    <span class="text-gray-500">ID Akun</span>
+                    <span>6838636</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">Nickname</span>
+                    <span>Player123</span>
                 </div>
                 <div class="flex justify-between">
                     <span class="text-gray-500">Item</span>
@@ -113,10 +114,10 @@
 
         <!-- Tombol Aksi -->
         <div class="mt-6 space-y-3">
-            <a href="https://wa.me/6285169935089?text=📋%20STRUK%20PEMBAYARAN%20XDNRY777%0A%0A📌%20No.%20Pesanan%3A%20XDN-8294-001%0A🎮%20Game%3A%20Mobile%20Legends%0A👤%20ID%2FServer%3A%2012345678%20(1234)%0A💎%20Item%3A%2070%20Diamonds%0A💳%20Metode%20Bayar%3A%20DANA%2FQ RIS%0A💰%20Total%20Bayar%3A%20Rp%2020.050%0A✅%20Status%3A%20Sudah%20Dibayar%0A%0ASilakan%20diproses%20ya%20min.%20Terima%20kasih%20🙏" 
+            <a href="https://wa.me/6285169935089?text=📋%20STRUK%20PEMBAYARAN%20XDNRY777%0A%0A✅%20STATUS%3A%20BERHASIL%20DITERIMA%0A%0A📌%20No.%20Pesanan%3A%20XDN-8294-001%0A🎮%20Game%3A%20Mobile%20Legends%0A👤%20ID%20Akun%3A%206838636%0A💬%20Nickname%3A%20Player123%0A💎%20Item%3A%2070%20Diamonds%0A💳%20Metode%20Bayar%3A%20DANA%20%2F%20QRIS%0A💰%20Total%20Bayar%3A%20Rp%2020.050%0A%0ATerima%20kasih%20telah%20berbelanja!%0A~%20Xdnry777%20Store%20~" 
                target="_blank"
                class="block w-full bg-green-600 hover:bg-green-700 py-3 rounded-lg font-semibold text-center transition-all">
-                <i class="fa fa-whatsapp mr-2"></i> Kirim Struk ke Admin
+                <i class="fa fa-whatsapp mr-2"></i> Kirim Ulang Struk ke WA
             </a>
 
             <a href="index.html" class="block w-full bg-ungu-utama hover:bg-ungu-terang py-3 rounded-lg font-semibold text-center transition-all">
@@ -125,5 +126,12 @@
         </div>
     </div>
 
+    <script>
+        // Tampilkan tanggal otomatis saat ini
+        const sekarang = new Date();
+        const tanggal = sekarang.toLocaleDateString('id-ID', { day:'numeric', month:'long', year:'numeric' });
+        const jam = sekarang.toLocaleTimeString('id-ID', { hour:'2-digit', minute:'2-digit' });
+        document.getElementById('tanggalSekarang').textContent = `${tanggal}, ${jam} WIB`;
+    </script>
 </body>
 </html>
