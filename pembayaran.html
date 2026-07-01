@@ -13,8 +13,10 @@
 </head>
 <body class="bg-gradasi min-h-screen font-sans text-white">
     <nav class="backdrop-blur-md bg-black/30 sticky top-0 z-50 border-b border-ungu-utama/30">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="text-2xl font-bold text-ungu-terang">⚡ Xdnry777</div>
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between relative">
+            <button class="text-2xl"><i class="fa fa-bars"></i></button>
+            <div class="absolute left-1/2 -translate-x-1/2 text-2xl font-bold text-ungu-terang"><i class="fa fa-bolt mr-1"></i>Xdnry777</div>
+            <button class="bg-ungu-utama px-4 py-2 rounded-lg"><i class="fa fa-user mr-1"></i>Masuk</button>
         </div>
     </nav>
 
@@ -26,46 +28,32 @@
             <div class="bg-card rounded-xl p-6 border border-ungu-utama/40">
                 <h2 class="text-lg font-semibold mb-4 border-b border-ungu-utama/30 pb-2">Ringkasan Pesanan</h2>
                 <div class="space-y-2 text-gray-300">
-                    <div class="flex justify-between"><span>Layanan</span><span id="tNama" class="font-medium text-white">-</span></div>
-                    <div class="flex justify-between"><span>ID Akun</span><span id="tId" class="font-medium text-white">-</span></div>
-                    <div class="flex justify-between"><span>Nickname</span><span id="tNick" class="font-medium text-white">-</span></div>
-                    <div class="flex justify-between"><span>Item</span><span id="tItem" class="font-medium text-white">-</span></div>
-                    <div class="flex justify-between font-bold text-ungu-terang pt-2 border-t border-ungu-utama/30"><span>Total Bayar</span><span id="tTotal">-</span></div>
+                    <div class="flex justify-between"><span>Layanan</span><span id="tNama" class="font-medium">-</span></div>
+                    <div class="flex justify-between"><span>ID Akun</span><span id="tId" class="font-medium">-</span></div>
+                    <div class="flex justify-between"><span>Nickname</span><span id="tNick" class="font-medium">-</span></div>
+                    <div class="flex justify-between"><span>Item</span><span id="tItem" class="font-medium">-</span></div>
+                    <div class="flex justify-between font-bold text-ungu-terang pt-2 border-t"><span>Total Bayar</span><span id="tTotal">-</span></div>
                 </div>
             </div>
 
             <div class="bg-card rounded-xl p-6 border border-ungu-utama/40">
                 <h2 class="text-lg font-semibold mb-4">Pilih Metode Pembayaran</h2>
-
-                <!-- QRIS -->
                 <label class="mb-5 p-4 border border-ungu-terang/50 rounded-lg bg-ungu-terang/10 flex items-center gap-3 cursor-pointer block">
                     <input type="radio" name="metode" value="QRIS" checked class="w-5 h-5 accent-ungu-terang">
                     <span class="text-xl font-bold">QRIS</span>
                     <span class="text-xs bg-ungu-neon px-2 py-0.5 rounded">NOXZCRUEL</span>
                 </label>
-                <div class="mb-5 text-center">
-                    <div class="bg-white p-4 rounded-lg inline-block">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=NOXZCRUEL" alt="QRIS" class="w-44 h-44 rounded">
-                    </div>
-                    <p class="text-sm text-gray-400 mt-3">Scan dari aplikasi pembayaran apa saja</p>
-                </div>
+                <div class="mb-5 text-center"><div class="bg-white p-4 rounded-lg inline-block"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=NOXZCRUEL" class="w-44 h-44 rounded"></div><p class="text-sm text-gray-400 mt-3">Scan dari aplikasi pembayaran apa saja</p></div>
 
-                <!-- DANA -->
                 <label class="p-4 border border-ungu-utama/30 rounded-lg flex items-center gap-3 cursor-pointer block">
                     <input type="radio" name="metode" value="DANA" class="w-5 h-5 accent-ungu-terang">
                     <span class="text-xl font-bold">DANA</span>
                     <span class="text-xs bg-blue-500 px-2 py-0.5 rounded">Resmi</span>
                 </label>
-                <div class="mt-3 pl-8">
-                    <p class="text-xl font-bold text-ungu-terang">0851-6993-5089</p>
-                    <p class="text-sm text-gray-400">a.n. EN**** YU******</p>
-                    <p class="text-sm text-yellow-400 mt-2">+ Kode Unik Rp 50 → <b id="totalBayar">-</b></p>
-                </div>
+                <div class="mt-3 pl-8"><p class="text-xl font-bold text-ungu-terang">0851-6993-5089</p><p class="text-sm text-gray-400">a.n. EN**** YU******</p><p class="text-sm text-yellow-400 mt-2">+ Kode Unik Rp 50 → <b id="totalBayar">-</b></p></div>
             </div>
 
-            <button onclick="proses()" class="w-full bg-gradient-to-r from-ungu-utama to-ungu-neon py-4 rounded-xl font-bold text-lg">
-                <i class="fa fa-check-circle mr-2"></i>Saya Sudah Bayar
-            </button>
+            <button onclick="proses()" class="w-full bg-gradient-to-r from-ungu-utama to-ungu-neon py-4 rounded-xl font-bold text-lg"><i class="fa fa-check-circle mr-2"></i>Saya Sudah Bayar</button>
         </div>
     </section>
 
@@ -75,40 +63,18 @@
             document.getElementById('tId').textContent = localStorage.getItem('id') || '-';
             document.getElementById('tNick').textContent = localStorage.getItem('nickname') || '-';
             document.getElementById('tItem').textContent = localStorage.getItem('item') || '-';
-
             let harga = parseInt((localStorage.getItem('hargaDasar') || '0').replace(/\./g,''));
             let total = harga + 50;
             localStorage.setItem('totalAkhir', total);
             document.getElementById('tTotal').textContent = 'Rp ' + total.toLocaleString('id-ID');
             document.getElementById('totalBayar').textContent = 'Rp ' + total.toLocaleString('id-ID');
         }
-
         function proses() {
-            // Ambil & simpan metode yang DIPILIH
             const metode = document.querySelector('input[name="metode"]:checked').value;
             localStorage.setItem('metodeBayar', metode);
-
-            const nama = localStorage.getItem('namaGame') || '-';
-            const id = localStorage.getItem('id') || '-';
-            const nick = localStorage.getItem('nickname') || '-';
-            const item = localStorage.getItem('item') || '-';
-            const total = localStorage.getItem('totalAkhir')?.toLocaleString('id-ID') || '-';
-
-            // Pesan WA DENGAN METODE
-            const pesan = `📋 STRUK XDNRY777
-✅ BERHASIL
-
-🎮 Game: ${nama}
-👤 ID: ${id}
-💬 Nick: ${nick}
-💎 Item: ${item}
-💳 Metode: ${metode}
-💰 Bayar: Rp ${total}
-
-Terima Kasih!`;
-
-            window.open(`https://wa.me/6285169935089?text=${encodeURIComponent(pesan)}`, '_blank');
-            setTimeout(() => window.location.href = 'struk.html', 600);
+            const pesan = `📋 STRUK XDNRY777\n✅ BERHASIL\n🎮 Game: ${localStorage.getItem('namaGame')}\n👤 ID: ${localStorage.getItem('id')}\n💬 Nick: ${localStorage.getItem('nickname')}\n💎 Item: ${localStorage.getItem('item')}\n💳 Metode: ${metode}\n💰 Bayar: Rp ${localStorage.getItem('totalAkhir')?.toLocaleString('id-ID')}\nTerima Kasih!`;
+            window.open(`https://wa.me/6285169935089?text=${encodeURIComponent(pesan)}`,'_blank');
+            setTimeout(()=>window.location.href='struk.html',600);
         }
     </script>
 </body>
