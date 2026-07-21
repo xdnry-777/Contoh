@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xdnry777 Tools | TikTok Downloader & WA Chat iPhone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        dark: '#0F172A',
+                        darkLight: '#1E293B',
+                        waGreen: '#075E54',
+                        waDarkBg: '#1C1C1E',
+                        waDarkMenu: '#2C2C2E',
+                        waRed: '#FF453A'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glass {
+                background: rgba(22, 93, 255, 0.1);
+                backdrop-filter: blur(12px);
+                border: 1px solid rgba(22, 93, 255, 0.2);
+            }
+            .glass-btn {
+                background: rgba(22, 93, 255, 0.2);
+                backdrop-filter: blur(8px);
+                border: 1px solid rgba(22, 93, 255, 0.3);
+                transition: all 0.3s ease;
+            }
+            .glass-btn:hover {
+                background: rgba(22, 93, 255, 0.4);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(22, 93, 255, 0.25);
+            }
+            .text-gradient {
+                background: linear-gradient(90deg, #3B82F6, #165DFF);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .input-style {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                color: white;
+            }
+            .input-style:focus {
+                outline: none;
+                border-color: #165DFF;
+                box-shadow: 0 0 0 3px rgba(22, 93, 255, 0.2);
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            /* Tampilan WA iPhone Dark Mode */
+            .wa-iphone {
+                background: #000000;
+            }
+            .wa-header {
+                background: #1C1C1E;
+            }
+            .wa-chat-bg {
+                background: #000000;
+                background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232C2C2E' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            }
+            .wa-bubble-me {
+                background: #006652;
+                border-radius: 18px 18px 4px 18px;
+            }
+            .wa-bubble-other {
+                background: #1C1C1E;
+                border-radius: 18px 18px 18px 4px;
+            }
+            .wa-menu {
+                background: #2C2C2E;
+                border-radius: 14px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+            }
+            .wa-emoji-bar {
+                background: #2C2C2E;
+                border-radius: 20px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            }
+            .wa-menu-item {
+                border-bottom: 1px solid #3A3A3C;
+            }
+            .wa-menu-item:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-dark text-gray-100 min-h-screen font-sans">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 glass">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa fa-bolt text-primary text-2xl"></i>
+                <h1 class="text-xl font-bold text-gradient">Xdnry777 Tools</h1>
+            </div>
+            <nav class="hidden md:flex gap-6">
+                <a href="#beranda" class="hover:text-primary transition-colors">Beranda</a>
+                <a href="#tiktok" class="hover:text-primary transition-colors">TikTok Downloader</a>
+                <a href="#wachat" class="hover:text-primary transition-colors">WA Chat iPhone</a>
+                <a href="#lainnya" class="hover:text-primary transition-colors">Lainnya</a>
+            </nav>
+            <button class="md:hidden text-xl" id="menuBtn">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden glass">
+            <div class="container mx-auto px-4 py-3 flex flex-col gap-3">
+                <a href="#beranda" class="py-2 hover:text-primary transition-colors">Beranda</a>
+                <a href="#tiktok" class="py-2 hover:text-primary transition-colors">TikTok Downloader</a>
+                <a href="#wachat" class="py-2 hover:text-primary transition-colors">WA Chat iPhone</a>
+                <a href="#lainnya" class="py-2 hover:text-primary transition-colors">Lainnya</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Beranda -->
+        <section id="beranda" class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4">
+                    Alat Serbaguna <span class="text-gradient">Xdnry777</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Unduh video TikTok tanpa tanda air, buat tampilan chat WhatsApp persis iPhone (termasuk menu tekan tahan), dan fitur berguna lainnya.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass rounded-xl p-6 hover:scale-[1.02] transition-transform">
+                    <i class="fa fa-download text-primary text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">TikTok Downloader</h3>
+                    <p class="text-gray-400">Unduh video/foto/audio TikTok kualitas HD tanpa watermark.</p>
+                </div>
+                <div class="glass rounded-xl p-6 hover:scale-[1.02] transition-transform">
+                    <i class="fa fa-whatsapp text-green-500 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">WA Style iPhone</h3>
+                    <p class="text-gray-400">Termasuk menu tekan tahan & reaksi emoji persis seperti aslinya!</p>
+                </div>
+                <div class="glass rounded-xl p-6 hover:scale-[1.02] transition-transform">
+                    <i class="fa fa-paint-brush text-purple-400 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Desain Modern</h3>
+                    <p class="text-gray-400">Tema biru-hitam, tombol transparan, nyaman dipakai.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TikTok Downloader -->
+        <section id="tiktok" class="mb-16">
+            <div class="glass rounded-2xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <i class="fa fa-music text-primary"></i> TikTok Downloader
+                </h2>
+                <p class="text-gray-400 mb-6">Masukkan link TikTok untuk unduh tanpa watermark</p>
+                <div class="flex flex-col md:flex-row gap-3 mb-6">
+                    <input type="text" id="tiktokLink" placeholder="Tempel link TikTok di sini..." 
+                        class="input-style flex-1 px-4 py-3 rounded-lg">
+                    <button id="downloadBtn" class="glass-btn px-6 py-3 rounded-lg font-medium">
+                        <i class="fa fa-search mr-2"></i> Cari & Unduh
+                    </button>
+                </div>
+                <div id="resultTiktok" class="hidden mt-6">
+                    <div class="border border-gray-700 rounded-lg p-4">
+                        <div class="flex flex-col md:flex-row gap-4">
+                            <div class="w-full md:w-1/3 bg-darkLight rounded-lg aspect-video flex items-center justify-center">
+                                <i class="fa fa-play-circle-o text-4xl text-gray-500"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold mb-2">Judul Video</h4>
+                                <p class="text-gray-400 text-sm mb-4">@username • 1.2M tampilan</p>
+                                <div class="flex flex-wrap gap-3">
+                                    <button class="glass-btn px-4 py-2 rounded-lg text-sm">
+                                        <i class="fa fa-download mr-1"></i> Video HD
+                                    </button>
+                                    <button class="glass-btn px-4 py-2 rounded-lg text-sm">
+                                        <i class="fa fa-download mr-1"></i> Audio MP3
+                                    </button>
+                                    <button class="glass-btn px-4 py-2 rounded-lg text-sm">
+                                        <i class="fa fa-download mr-1"></i> Foto
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WA Chat iPhone (Versi Terbaru) -->
+        <section id="wachat" class="mb-16">
+            <div class="glass rounded-2xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <i class="fa fa-whatsapp text-green-500"></i> WA Chat Style iPhone (Menu Tekan Tahan)
+                </h2>
+                <p class="text-gray-400 mb-6">Persis seperti contoh gambar yang kamu kirim!</p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Pengaturan -->
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Nama Kontak</label>
+                            <input type="text" id="waName" value="Teman" class="input-style w-full px-4 py-2 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Pesan</label>
+                            <input type="text" id="waMsg" value="Hallo" class="input-style w-full px-4 py-2 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Waktu</label>
+                            <input type="text" id="waTime" value="14:00" class="input-style w-full px-4 py-2 rounded-lg">
+                        </div>
+                        <button id="updateWa" class="glass-btn w-full py-3 rounded-lg font-medium">
+                            <i class="fa fa-refresh mr-2"></i> Perbarui Tampilan
+                        </button>
+                        <p class="text-gray-400 text-sm mt-2">💡 Klik pesan di sebelah untuk melihat menu tekan tahan!</p>
+                    </div>
+
+                    <!-- Tampilan HP -->
+                    <div class="flex justify-center">
+                        <div class="w-[290px] h-[560px] bg-black rounded-[36px] p-2 shadow-2xl overflow-hidden border-2 border-gray-800">
+                            <div class="wa-iphone w-full h-full rounded-[32px] flex flex-col">
+                                <!-- Header -->
+                                <div class="wa-header text-white px-3 py-2 flex items-center gap-2 rounded-t-[32px]">
+                                    <i class="fa fa-chevron-left text-sm"></i>
+                                    <div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center text-xs">T</div>
+                                    <div class="flex-1">
+                                        <div class="text-sm font-medium" id="previewName">Teman</div>
+                                        <div class="text-xs text-gray-400">online</div>
+                                    </div>
+                                    <i class="fa fa-video-camera px-2 text-sm"></i>
+                                    <i class="fa fa-phone px-2 text-sm"></i>
+                                    <i class="fa fa-ellipsis-v px-2 text-sm"></i>
+                                </div>
+
+                                <!-- Isi Chat -->
+                                <div class="wa-chat-bg flex-1 p-3 overflow-y-auto scrollbar-hide relative">
+                                    <!-- Pesan -->
+                                    <div class="flex justify-start mb-4">
+                                        <div id="msgBubble" class="wa-bubble-other px-3 py-1 cursor-pointer relative">
+                                            <p class="text-sm text-white" id="previewMsg">Hallo</p>
+                                            <p class="text-right text-xs text-gray-400 mt-1" id="previewTime">14:00</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Menu Emoji & Pilihan (Awalnya Tersembunyi) -->
+                                    <div id="waMenuFull" class="hidden absolute top-16 left-1/2 -translate-x-1/2 z-10 w-[260px]">
+                                        <!-- Baris Reaksi Emoji -->
+                                        <div class="wa-emoji-bar px-3 py-2 flex justify-around mb-2">
+                                            <span class="text-2xl cursor-pointer hover:scale-125 transition-transform">👍</span>
+                                            <span class="text-2xl cursor-pointer hover:scale-125 transition-transform">❤️</span>
+                                            <span class="text-2xl cursor-pointer hover:scale-125 transition-transform">😂</span>
+                                            <span class="text-2xl cursor-pointer hover:scale-125 transition-transform">😮</span>
+                                            <span class="text-2xl cursor-pointer hover:scale-125 transition-transform">😢</span>
+                                            <span class="text-2xl cursor-pointer hover:scale-125 transition-transform">🙏</span>
+                                        </div>
+                                        <!-- Daftar Menu -->
+                                        <div class="wa-menu overflow-hidden">
+                                            <div class="wa-menu-item px-4 py-3 flex justify-between items-center">
+                                                <span class="text-white text-sm">Beri Bintang</span>
+                                                <i class="fa fa-star text-gray-400"></i>
+                                            </div>
+                                            <div class="wa-menu-item px-4 py-3 flex justify-between items-center">
+                                                <span class="text-white text-sm">Balas</span>
+                                                <i class="fa fa-reply text-gray-400"></i>
+                                            </div>
+                                            <div class="wa-menu-item px-4 py-3 flex justify-between items-center">
+                                                <span class="text-white text-sm">Teruskan</span>
+                                                <i class="fa fa-share text-gray-400"></i>
+                                            </div>
+                                            <div class="wa-menu-item px-4 py-3 flex justify-between items-center">
+                                                <span class="text-white text-sm">Salin</span>
+                                                <i class="fa fa-files-o text-gray-400"></i>
+                                            </div>
+                                            <div class="wa-menu-item px-4 py-3 flex justify-between items-center">
+                                                <span class="text-white text-sm">Ucapkan</span>
+                                                <i class="fa fa-comment-o text-gray-400"></i>
+                                            </div>
+                                            <div class="wa-menu-item px-4 py-3 flex justify-between items-center">
+                                                <span class="text-white text-sm">Laporkan</span>
+                                                <i class="fa fa-exclamation-triangle text-gray-400"></i>
+                                            </div>
+                                            <div class="wa-menu-item px-4 py-3 flex justify-between items-center">
+                                                <span class="text-waRed font-medium">Hapus</span>
+                                                <i class="fa fa-trash text-waRed"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Kolom Ketik -->
+                                <div class="wa-header px-3 py-2 flex items-center gap-2 rounded-b-[32px]">
+                                    <i class="fa fa-smile-o text-gray-400"></i>
+                                    <div class="flex-1 bg-gray-800 rounded-full px-3 py-1.5 text-sm text-gray-400">Ketik pesan</div>
+                                    <i class="fa fa-microphone text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fitur Tambahan -->
+        <section id="lainnya" class="mb-12">
+            <div class="glass rounded-2xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <i class="fa fa-plus-circle text-primary"></i> Fitur Lainnya
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-darkLight rounded-lg p-4 text-center hover:bg-darkLight/80 transition-colors">
+                        <i class="fa fa-clock-o text-xl mb-2 text-primary"></i>
+                        <p class="text-sm">Waktu Indonesia</p>
+                    </div>
+                    <div class="bg-darkLight rounded-lg p-4 text-center hover:bg-darkLight/80 transition-colors">
+                        <i class="fa fa-calculator text-xl mb-2 text-primary"></i>
+                        <p class="text-sm">Kalkulator</p>
+                    </div>
+                    <div class="bg-darkLight rounded-lg p-4 text-center hover:bg-darkLight/80 transition-colors">
+                        <i class="fa fa-qrcode text-xl mb-2 text-primary"></i>
+                        <p class="text-sm">Buat QR Code</p>
+                    </div>
+                    <div class="bg-darkLight rounded-lg p-4 text-center hover:bg-darkLight/80 transition-colors">
+                        <i class="fa fa-info-circle text-xl mb-2 text-primary"></i>
+                        <p class="text-sm">Tentang Kami</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass py-6">
+        <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
+            <p>© 2026 Xdnry777 Studio | Semua Hak Dilindungi</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu HP
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        // TikTok
+        const downloadBtn = document.getElementById('downloadBtn');
+        const resultTiktok = document.getElementById('resultTiktok');
+        downloadBtn.addEventListener('click', () => {
+            const link = document.getElementById('tiktokLink').value;
+            if(link.includes('tiktok.com') || link.includes('vt.tiktok.com')) {
+                resultTiktok.classList.remove('hidden');
+                alert('Link valid! Fitur unduh asli siap dipasang API nanti.');
+            } else alert('Masukkan link TikTok yang benar!');
+        });
+
+        // WA Chat iPhone Terbaru
+        const updateWa = document.getElementById('updateWa');
+        const msgBubble = document.getElementById('msgBubble');
+        const waMenuFull = document.getElementById('waMenuFull');
+
+        updateWa.addEventListener('click', () => {
+            document.getElementById('previewName').textContent = document.getElementById('waName').value;
+            document.getElementById('previewMsg').textContent = document.getElementById('waMsg').value;
+            document.getElementById('previewTime').textContent = document.getElementById('waTime').value;
+        });
+
+        // Klik pesan = tampilkan/sembunyikan menu
+        msgBubble.addEventListener('click', () => {
+            waMenuFull.classList.toggle('hidden');
+        });
+
+        // Klik luar menu = tutup
+        document.addEventListener('click', (e) => {
+            if(!msgBubble.contains(e.target) && !waMenuFull.contains(e.target)) {
+                waMenuFull.classList.add('hidden');
+            }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
